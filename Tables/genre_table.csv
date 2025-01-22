@@ -1,0 +1,52 @@
+Genre_ID,Genre_name
+1221, Action
+1222,Adventure
+1223,Animation
+1224,Biographical
+1225,Comedy
+1226,Crime
+1227,Disaster
+1228,Documentary
+1229,Drama
+1230,Epic
+1231,Experimental
+1232,Family
+1233,Fantasy
+1234,Film Noir
+1235,Gangster
+1236,Historical
+1237,Horror
+1238,Mockumentary
+1239,Musical
+1240,Mystery
+1241,Neo-Noir
+1242,Paranormal
+1243,Period Drama
+1244,Political
+1245,Psychological
+1246,Romance
+1247,Satire
+1248,Science Fiction
+1249,Slasher
+1250,Sports
+1251,Spy
+1252,Superhero
+1253,Supernatural
+1254,Surreal
+1255,Teen
+1256,Thriller
+1257,War
+1258,Western
+1259,Courtroom Drama
+1260,Crime Caper
+1261,Cyberpunk
+1262,Disaster
+1263,Folk Horror
+1264,Found Footage
+1265,Martial Arts
+1266,Melodrama
+1267,Monster
+1268,Revenge
+1269,Road Movie
+1270,Silent
+1271,Rom-Com
