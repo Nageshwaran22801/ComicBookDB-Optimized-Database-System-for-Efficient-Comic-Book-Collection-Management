@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Character</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Character</h1>
+        <form method="post" action="{{ url_for('edit_character', character_id=character[0]) }}">
+            <div class="form-group">
+                <label for="character_name">Name</label>
+                <input type="text" class="form-control" id="character_name" name="character_name" value="{{ character[1] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="character_info">Info</label>
+                <textarea class="form-control" id="character_info" name="character_info" rows="3" required>{{ character[2] }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMICS BOOK STORE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+        }
+        #left-column, #right-column {
+            width: 50%;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            height: 40px;
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>COMICS BOOK STORE</h1>
+    <div id="container">
+        <div id="left-column">
+            <form action="/" method="post">
+                <label for="query">Enter your SQL query:</label><br>
+                <input type="text" id="query" name="query" size="30"><br>
+                <button type="submit">Execute Query</button>
+                <button type="submit" name="refresh" value="true">Refresh</button>
+            </form>
+            <div>
+                {% if query %}
+                    <h2>Executed Query:</h2>
+                    <p>{{ query }}</p>
+                {% endif %}
+                {% if execution_time %}
+                    <h2>Execution Time:</h2>
+                    <p>{{ execution_time }} seconds</p>
+                {% endif %}
+            </div>
+        </div>
+        <div id="right-column">
+            {% if column_names and result %}
+                <h2>Query Result:</h2>
+                <table border="1">
+                    <tr>
+                        {% for col in column_names %}
+                            <th>{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% for row in result %}
+                        <tr>
+                            {% for val in row %}
+                                <td>{{ val }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% if total_pages > 1 %}
+                    <div>
+                        Page: 
+                        {% for p in range(1, total_pages + 1) %}
+                            <button type="submit" name="page" value="{{ p }}">{{ p }}</button>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
